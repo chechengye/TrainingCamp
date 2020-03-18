@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>QuickStart</servlet-name>
+        <servlet-class>com.weichuang.web.QuickStartServlet</servlet-class>
+    </servlet>
+    <!--
+        路径配置有多种方式：
+        /quickStart ： 完全匹配，推荐
+        /aaa/bbb/*  : 虚拟目录匹配
+        *.abc   : 扩展名的匹配方式
+        / : 缺省的配置 ,目前不推荐
+    -->
+    <servlet-mapping>
+        <servlet-name>QuickStart</servlet-name>
+        <url-pattern>/quickStart</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+</web-app>
