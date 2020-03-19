@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/camp-java/camp-java.iml" filepath="$PROJECT_DIR$/camp-java/camp-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/camp-store/camp-store.iml" filepath="$PROJECT_DIR$/camp-store/camp-store.iml" />
       <module fileurl="file://$PROJECT_DIR$/camp-web/camp-web.iml" filepath="$PROJECT_DIR$/camp-web/camp-web.iml" />
     </modules>
   </component>
