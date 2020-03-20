@@ -22,4 +22,15 @@ public class UserServiceImpl implements UserService {
         user.setUid(UUID.randomUUID().toString().replace("-",""));
         return userDao.registerUser(user);
     }
+
+    /**
+     * 校验登陆
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public User login(String username, String password) {
+        return userDao.login(username , password);
+    }
 }

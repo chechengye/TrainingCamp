@@ -13,7 +13,7 @@
 	<body>
 		<div class="container-fluid">
 
-			<!-- 引入header.jsp -->
+			<!-- 引入header.jsp 动态包含-->
 			<jsp:include page="/header.jsp"></jsp:include>
 
 			<!-- 轮播图 -->

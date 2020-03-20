@@ -3,6 +3,7 @@ package com.weichuang.dao;
 import com.weichuang.pojo.User;
 import com.weichuang.utils.C3P0Util;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import java.sql.SQLException;
 
@@ -22,5 +23,15 @@ public class UserDao {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public User login(String username, String password) {
+        String sql = "select u.uid , u.name from user u where username = ? and password = ?";
+        try {
+            return qr.query(sql , new BeanHandler<>(User.class) , username , password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

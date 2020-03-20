@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,10 +12,17 @@
 	</div>
 	<div class="col-md-3" style="padding-top:20px">
 		<ol class="list-inline">
-			<li><a href="login.jsp">登录</a></li>
-			<li><a href="register.jsp">注册</a></li>
-			<li><a href="cart.jsp">购物车</a></li>
-			<li><a href="order_list.jsp">我的订单</a></li>
+			<c:if test="${user != null}">
+				<li>欢迎您,${user.name}</li>
+				<li><a href="cart.jsp">购物车</a></li>
+				<li><a href="order_list.jsp">我的订单</a></li>
+			</c:if>
+			<c:if test="${user == null}">
+				<li><a href="login.jsp">登录</a></li>
+				<li><a href="register.jsp">注册</a></li>
+				<li><a href="cart.jsp">购物车</a></li>
+				<li><a href="order_list.jsp">我的订单</a></li>
+			</c:if>
 		</ol>
 	</div>
 </div>
@@ -36,7 +44,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="product_list.htm">手机数码<span class="sr-only">(current)</span></a></li>
+					<li class="active"><a href=${pageContext.request.contextPath}"/productList">手机数码<span class="sr-only">(current)</span></a></li>
 					<li><a href="#">电脑办公</a></li>
 					<li><a href="#">电脑办公</a></li>
 					<li><a href="#">电脑办公</a></li>

@@ -27,6 +27,7 @@ public class RegisterServlet extends HttpServlet{
         User user = new User();
         UserService us = new UserServiceImpl();
         try {
+            //会将我们实体bean类进行自动封装，根据第二个map参数。会将map的key与实体类的成员属性进行一一映射，名字不同的映射不上。
             BeanUtils.populate(user , req.getParameterMap());
             int rows = us.registerUser(user);
             if(rows > 0){
